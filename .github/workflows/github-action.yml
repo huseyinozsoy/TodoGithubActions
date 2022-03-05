@@ -28,10 +28,11 @@ jobs:
         run: |
           cd todo-github-actions
           npm run build:ci
-      - name: Deploy
-        if: success()
-        uses: peaceiris/actions-gh-pages@v3
+      - name: All things angular
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
         with:
-          github_token: ${{ secrets.SURGE_TOKEN }}
-          publish_dir: dist/angular-github-actions
-          enable_jekyll: true
+          github_access_token: ${{ secrets.SURGE_TOKEN }}
+          build_configuration: production # The build environment for the app. please look configurations in your angular.json
+          base_href: /todo-github-actions/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
+          deploy_branch: gh-pages # The branch the action should deploy to.
+          angular_dist_build_folder: dist//todo-github-actions # The folder where your project is supposed to be after running ng build by the action.
