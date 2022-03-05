@@ -37,8 +37,8 @@ jobs:
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: |
           cd todo-github-actions
-          npm i
+          npm ci
       - name: npm install and npm run CI commands
         run: |
           cd todo-github-actions
-          npm run build
+          npm run build:ci
