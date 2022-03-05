@@ -41,7 +41,7 @@ jobs:
       - name: Build
         run: |
           cd todo-github-actions
-          npm run build -- --prod
+          npm run build
       - name: Lint
         run: |
           cd todo-github-actions
