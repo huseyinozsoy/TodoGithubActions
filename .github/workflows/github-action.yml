@@ -37,16 +37,10 @@ jobs:
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: |
           cd todo-github-actions
-          npm ci
-      - name: Build
+          npm i
+      - name: npm install and npm run CI commands
         run: |
           cd todo-github-actions
-          npm run build
-      - name: Lint
-        run: |
-          cd todo-github-actions
-          npm run lint
-      - name: Test
-        run: |
-          cd todo-github-actions
-          npm run test -- --prod
+          npm i
+          npm run test:ci
+          npm run build:ci
