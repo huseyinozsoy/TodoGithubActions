@@ -30,7 +30,7 @@ jobs:
           npm run build:ci
   deploy:
     runs-on: ubuntu-latest
-    needs: build
+    needs: ci
     name: Deploying to surge
     steps:
       - uses: actions/checkout@v2
