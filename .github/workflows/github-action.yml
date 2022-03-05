@@ -41,5 +41,4 @@ jobs:
       - name: npm install and npm run CI commands
         run: |
           cd todo-github-actions
-          npm run test:ci
           npm run build:ci
